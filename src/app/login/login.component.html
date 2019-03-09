@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">Team Conatus</mat-toolbar>
+<div class="conatus-img"><img src="assets/conatus-icon.png" alt="Conatus" width="100px" height="100px"/></div>
+<mat-card>
+  <mat-card-header>
+    <div>
+      LOGIN
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-footer>
+    <div class="submit-button">
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </div>
+  </mat-card-footer>
+
+</mat-card>
+<div class="footer">DOC- Dawn Of Crisis</div>
+
