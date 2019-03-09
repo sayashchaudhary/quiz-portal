@@ -1,8 +1,8 @@
 import { ILogin } from "../models/login.model";
 import { QuizSet } from "./conatus-enums";
 
-export class LoginDetails {
-  private static email_pass: ILogin[] =
+export class UserUtils {
+  private static EMAIL_PASS: ILogin[] =
     [
       {
         email: "doc1@teamconatus.com",
@@ -87,12 +87,13 @@ export class LoginDetails {
     ];
 
   static getSetNumber(loginData: ILogin): QuizSet {
-    this.email_pass.forEach(data => {
+    let set: QuizSet;
+    this.EMAIL_PASS.forEach(data => {
       if (data.email === loginData.email && data.password === loginData.password) {
-        return data.set;
+        set = data.set;
       }
     });
-    return null;
+    return set;
   }
 
 }
