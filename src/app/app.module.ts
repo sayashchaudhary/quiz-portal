@@ -3,8 +3,8 @@ import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./login/login.component";
-import { QuizComponent } from "./quiz/quiz.component";
+import { LoginComponent } from "./components/login/login.component";
+import { QuizComponent } from "./components/quiz/quiz.component";
 import { MaterialModule } from "../material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
