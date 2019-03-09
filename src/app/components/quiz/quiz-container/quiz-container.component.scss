@@ -1,0 +1,15 @@
+@import "~src/variables";
+
+.container {
+  margin-top: 10px;
+  text-align: center;
+  img {
+    border: 2px solid $color-primary;
+    border-radius: 5px;
+  }
+  &__interpretation {
+    width: 500px;
+    margin: 10px auto;
+    text-align: center;
+  }
+}

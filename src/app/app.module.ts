@@ -8,6 +8,7 @@ import { QuizComponent } from "./components/quiz/quiz.component";
 import { MaterialModule } from "../material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
+import { QuizContainerComponent } from './components/quiz/quiz-container/quiz-container.component';
 
 const APP_ROUTES: Routes = [
   {
@@ -25,7 +26,8 @@ const APP_ROUTES: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    QuizComponent
+    QuizComponent,
+    QuizContainerComponent
   ],
   imports: [
     BrowserModule,

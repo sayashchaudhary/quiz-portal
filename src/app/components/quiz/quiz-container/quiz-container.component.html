@@ -1,0 +1,15 @@
+<div class="container">
+  <ng-container *ngIf="showImage">
+    <img [src]="image" width="600px" height="400px">
+    <h2>Please tell the interpretation of this image to your partner!</h2>
+    <button (click)="next()" mat-raised-button color="primary" type="button">Next</button>
+  </ng-container>
+  <ng-container *ngIf="!showImage">
+    <div class="container__interpretation">
+      <mat-form-field>
+        <input matInput type="email" placeholder="Interpretation of partner's image" [formControl]="interpretation">
+      </mat-form-field>
+      <button (click)="submit()" mat-raised-button color="primary" type="button">Submit</button>
+    </div>
+  </ng-container>
+</div>

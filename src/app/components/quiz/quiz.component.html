@@ -1,3 +1,8 @@
-<p>
-  quiz works!
-</p>
+<app-quiz-container
+[image]="imageUrl"
+[showImage]="showImage"
+(nextClicked)="next()"
+(submitClicked)="submit($event)"
+></app-quiz-container>
+
+<div *ngIf="win">Win</div>

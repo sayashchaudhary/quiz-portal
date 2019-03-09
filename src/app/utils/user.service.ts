@@ -6,7 +6,7 @@ import { QuizSet } from "./conatus-enums";
 })
 export class UserService {
 
-  private currentSet: QuizSet;
+  private currentSet: QuizSet = QuizSet.SET_ONE_A;
 
   constructor() {
   }
