@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { TimerService } from "./utils/timer.service";
 import { Subscription } from "rxjs";
+import { BlockUI, NgBlockUI } from "ng-block-ui";
 
 @Component({
   selector: "app-root",
@@ -22,8 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate(["/quiz"]);
-    this.timerService.initializeTimer();
+    this.router.navigate(["/login"]);
     this.hourSubscription = this.timerService.getHours()
       .subscribe(hour => this.hours = hour);
     this.minuteSubscription = this.timerService.getMinutes()
@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
         this.minuteSubscription.unsubscribe();
         this.secondSubscription.unsubscribe();
       }
-    })
+    });
   }
+
 }

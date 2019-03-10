@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, Subject, Subscription, timer } from "rxjs";
+import { Observable, Subject, timer } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -12,14 +12,15 @@ export class TimerService {
   private secondsEvent: Subject<number>;
   private minutesEvent: Subject<number>;
   private hoursEvent: Subject<number>;
-
-  dumpEvent: Subject<boolean>;
+  private blockUiEvent: Subject<boolean>;
+  private dumpEvent: Subject<boolean>;
 
   constructor() {
     this.secondsEvent = new Subject<number>();
     this.minutesEvent = new Subject<number>();
     this.hoursEvent = new Subject<number>();
     this.dumpEvent = new Subject<boolean>();
+    this.blockUiEvent = new Subject<boolean>();
   }
 
   initializeTimer() {
@@ -45,6 +46,10 @@ export class TimerService {
     this.dumpEvent.next(true);
   }
 
+  blockUi() {
+    this.blockUiEvent.next(true);
+  }
+
   getSeconds(): Observable<number> {
     return this.secondsEvent.asObservable();
   }
@@ -59,5 +64,9 @@ export class TimerService {
 
   getDumpEvent(): Observable<boolean> {
     return this.dumpEvent.asObservable();
+  }
+
+  getBlockUiEvent(): Observable<boolean> {
+    return this.blockUiEvent.asObservable();
   }
 }

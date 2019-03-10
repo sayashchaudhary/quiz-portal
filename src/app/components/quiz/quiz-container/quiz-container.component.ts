@@ -8,6 +8,7 @@ import { MatSnackBar } from "@angular/material";
   styleUrls: ["./quiz-container.component.scss"]
 })
 export class QuizContainerComponent implements OnInit {
+  @Input() hintImage: string;
   @Input() image: string;
   @Input() showImage: boolean;
   @Output() nextClicked = new EventEmitter();

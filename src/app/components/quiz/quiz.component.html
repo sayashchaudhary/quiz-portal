@@ -1,8 +1,23 @@
-<app-quiz-container
-[image]="imageUrl"
-[showImage]="showImage"
-(nextClicked)="next()"
-(submitClicked)="submit($event)"
-></app-quiz-container>
+<block-ui></block-ui>
+<ng-container *ngIf="!win">
+  <app-quiz-container
+    [image]="imageUrl"
+    [showImage]="showImage"
+    [hintImage]="hintImageUrl"
+    (nextClicked)="next()"
+    (submitClicked)="submit($event)"
+  ></app-quiz-container>
+  <div style="text-align: center; margin-top: 30px" *ngIf="complete">
+    <button (click)="finish()" mat-raised-button color="primary" type="submit">Finish</button>
+  </div>
+</ng-container>
 
-<div *ngIf="win">Win</div>
+
+<div class="win-container" *ngIf="win">
+  <h2>
+    Congratulations, You have successfully completed the quiz!!
+  </h2>
+  <h3>
+    Your score is {{score}}
+  </h3>
+</div>

@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       this.snackbar.open("It seems that your details are in correct!", null, { duration: 3000 })
       return;
     }
+    this.userService.setIsLoggedIn(true);
     this.userService.setCurrentSet(currentSet);
     this.router.navigate(["quiz"]);
   }

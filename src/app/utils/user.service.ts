@@ -7,6 +7,7 @@ import { QuizSet } from "./conatus-enums";
 export class UserService {
 
   private currentSet: QuizSet = QuizSet.SET_ONE_A;
+  private isLoggedIn = false;
 
   constructor() {
   }
@@ -20,5 +21,13 @@ export class UserService {
       return;
     }
     this.currentSet = set;
+  }
+
+  setIsLoggedIn(isLoggedIn: boolean) {
+    this.isLoggedIn = isLoggedIn;
+  }
+
+  getIsLoggedIn() {
+    return this.isLoggedIn;
   }
 }

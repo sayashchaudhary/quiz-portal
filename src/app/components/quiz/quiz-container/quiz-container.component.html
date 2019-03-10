@@ -11,5 +11,9 @@
       </mat-form-field>
       <button (click)="submit()" mat-raised-button color="primary" type="button">Submit</button>
     </div>
+    <ng-container *ngIf="hintImage">
+      <div class="hint">Hint</div>
+      <img [src]="hintImage" width="600px" height="400px">
+    </ng-container>
   </ng-container>
 </div>

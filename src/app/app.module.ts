@@ -8,12 +8,15 @@ import { QuizComponent } from "./components/quiz/quiz.component";
 import { MaterialModule } from "../material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
-import { QuizContainerComponent } from './components/quiz/quiz-container/quiz-container.component';
+import { QuizContainerComponent } from "./components/quiz/quiz-container/quiz-container.component";
+import { BlockUIModule } from "ng-block-ui";
+import { AuthGuard } from "./auth.guard";
 
 const APP_ROUTES: Routes = [
   {
     path: "login",
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AuthGuard]
 
   },
   {
@@ -34,7 +37,8 @@ const APP_ROUTES: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTES),
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BlockUIModule.forRoot({ message: "Incorrect answer! You are blocked for 2 minutes." })
   ],
   providers: [],
   bootstrap: [AppComponent]
