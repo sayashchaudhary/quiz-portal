@@ -1,4 +1,11 @@
-<mat-toolbar color="primary"><img src="assets/conatus-text.png" alt="Conatus" width="300px" height="30px"/>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img src="assets/conatus-text.png" alt="Conatus" width="300px" height="30px"/>
+    <div class="spacer"></div>
+    <div><span>{{hours}}</span>:<span>{{minutes}}</span>:<span>{{seconds}}</span></div>
+  </mat-toolbar-row>
+
+
 </mat-toolbar>
 <router-outlet></router-outlet>
 <div class="footer">DOC- Dawn Of Crisis</div>
