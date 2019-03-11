@@ -3,6 +3,7 @@ import { UserService } from "../../utils/user.service";
 import { QuizSet } from "../../utils/conatus-enums";
 import { TimerService } from "../../utils/timer.service";
 import { BlockUI, NgBlockUI } from "ng-block-ui";
+import { MatSnackBar } from "@angular/material";
 
 @Component({
   selector: "app-quiz",
@@ -29,7 +30,7 @@ export class QuizComponent implements OnInit {
   setThreeA = ["shoe", "checkbook", "steps", "potluck"];
   setThreeB = ["pillow", "layoff", "standing-ovation", "skin"];
 
-  constructor(private userService: UserService, private timerService: TimerService) {
+  constructor(private userService: UserService, private timerService: TimerService,private snackbar: MatSnackBar) {
 
   }
 
@@ -138,7 +139,9 @@ export class QuizComponent implements OnInit {
         }
       } else {
         if (this.attempts === 0) {
-          this.hintImageUrl = "assets/set1/H1B11.jpg"; //Todo: Hint image not present
+          // this.hintImageUrl = "assets/set1/H1B11.jpg"; //Todo: Hint image not present
+          this.snackbar.open("Opps, your interpretation is incorrect. You have got one more attempt.", null, { duration: 4000 })
+
           this.attempts++;
         }
         else if (this.attempts === 1) {
@@ -552,7 +555,8 @@ export class QuizComponent implements OnInit {
         }
       } else {
         if (this.attempts === 0) {
-          this.hintImageUrl = "assets/set2/H2A14.jpg"; // Todo image not available
+          // this.hintImageUrl = "assets/set2/H2A14.jpg"; // Todo image not available
+          this.snackbar.open("Opps, your interpretation is incorrect. You have got one more attempt.", null, { duration: 4000 })
           this.attempts++;
         }
         else if (this.attempts === 1) {
